@@ -1,0 +1,50 @@
+﻿@model AspNetCoreMVC.Models.Filme
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+    <h4>Excluir Filme - @Html.DisplayFor(model => model.Titulo)</h4>
+
+<h5>Deseja realmente excluir este filme?</h5>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lancamento)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lancamento)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Genero)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Genero)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Preco)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Preco)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Classificacao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Classificacao)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <a class="btn btn-secondary float-left" asp-action="Index">Voltar</a>
+        <input type="submit" value="Excluir" class="btn btn-danger float-right" />
+    </form>
+</div>

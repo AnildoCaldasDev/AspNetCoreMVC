@@ -1,0 +1,76 @@
+﻿@model AspNetCoreMVC.Models.FilmeGeneroViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3 class="text-center">Listagem de Filmes</h3>
+<br />
+
+@*<div class="row float-right">
+        <a asp-action="Create" class="btn btn-primary btn-sm float-right mb-2">Novo</a>
+    </div>
+    <br />*@
+
+<form asp-controller="Filmes" asp-action="Index">
+    <p>
+        Gênero:
+        <select asp-for="filmeGenero" asp-items="Model.generos">
+            <option value="">Todos</option>
+        </select>
+        Titulo: <input type="text" name="criterioDeBusca" /> <input class="btn btn-sm btn-info mb-1" type="submit" value="Buscar" />
+        <a asp-action="Create" class="btn btn-primary btn-sm float-right mb-2">Novo</a>
+    </p>
+</form>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.filmes[0].Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.filmes[0].Lancamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.filmes[0].Genero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.filmes[0].Preco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.filmes[0].Classificacao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.filmes)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Titulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lancamento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genero)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Preco)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Classificacao)
+                </td>
+                <td>
+                    <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@item.ID">Editar</a> |
+                    <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.ID">Detalhes</a> |
+                    <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.ID">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

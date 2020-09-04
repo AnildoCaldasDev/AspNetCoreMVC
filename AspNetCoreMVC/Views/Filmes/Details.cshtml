@@ -1,0 +1,48 @@
+﻿@model AspNetCoreMVC.Models.Filme
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+    <h4>Detalhes do Filme -  @Html.DisplayFor(model => model.Titulo) </h4>
+
+<div>
+       <hr />
+       <dl class="row">
+           <dt class="col-sm-2">
+               @Html.DisplayNameFor(model => model.Titulo)
+           </dt>
+           <dd class="col-sm-10">
+               @Html.DisplayFor(model => model.Titulo)
+           </dd>
+           <dt class="col-sm-2">
+               @Html.DisplayNameFor(model => model.Lancamento)
+           </dt>
+           <dd class="col-sm-10">
+               @Html.DisplayFor(model => model.Lancamento)
+           </dd>
+           <dt class="col-sm-2">
+               @Html.DisplayNameFor(model => model.Genero)
+           </dt>
+           <dd class="col-sm-10">
+               @Html.DisplayFor(model => model.Genero)
+           </dd>
+           <dt class="col-sm-2">
+               @Html.DisplayNameFor(model => model.Preco)
+           </dt>
+           <dd class="col-sm-10">
+               @Html.DisplayFor(model => model.Preco)
+           </dd>
+           <dt class="col-sm-2">
+               @Html.DisplayNameFor(model => model.Classificacao)
+           </dt>
+           <dd class="col-sm-10">
+               @Html.DisplayFor(model => model.Classificacao)
+           </dd>
+       </dl>
+</div>
+<div>
+
+    <a class="btn btn-secondary float-left" asp-action="Index">Voltar</a>
+    <a class="btn btn-primary float-right" asp-action="Edit" asp-route-id="@Model.ID">Editar</a>
+</div>

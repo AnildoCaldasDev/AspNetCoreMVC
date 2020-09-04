@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "UsarViewData";
+}
+
+<h1>UsarViewData</h1>
+
+<ul>
+
+    @for (int i = 0; i < (int)ViewData["Time"]; i++)
+    {
+        <li>@ViewData["Name"]</li>
+    }
+
+</ul>
